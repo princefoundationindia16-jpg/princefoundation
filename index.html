@@ -1,39 +1,44 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prince Foundation</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#0d0d0d;
+background:#050505;
 color:white;
 }
 
 header{
 position:fixed;
 top:0;
+left:0;
 width:100%;
-background:#111;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(12px);
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 8%;
-box-shadow:0 0 20px rgba(255,215,0,.2);
 z-index:1000;
 }
 
 .logo{
-font-size:28px;
-font-weight:bold;
+font-size:30px;
+font-weight:700;
 color:#FFD700;
 }
 
@@ -41,6 +46,7 @@ nav a{
 color:white;
 text-decoration:none;
 margin-left:25px;
+font-size:17px;
 transition:.3s;
 }
 
@@ -51,115 +57,298 @@ color:#FFD700;
 .hero{
 height:100vh;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
+flex-direction:column;
 text-align:center;
 padding:20px;
-background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8));
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),
+url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
 }
 
 .hero h1{
-font-size:55px;
+font-size:70px;
 color:#FFD700;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
 .hero p{
-font-size:22px;
+font-size:24px;
 max-width:700px;
 line-height:1.7;
-margin-bottom:30px;
 }
 
-button{
-padding:15px 35px;
+.btn{
+margin-top:35px;
+padding:18px 45px;
 background:#FFD700;
 color:black;
-font-size:18px;
+text-decoration:none;
 font-weight:bold;
-border:none;
-border-radius:40px;
-cursor:pointer;
+border-radius:50px;
 transition:.3s;
 }
 
-button:hover{
+.btn:hover{
 transform:scale(1.08);
+box-shadow:0 0 30px gold;
 }
 
 section{
-padding:80px 10%;
+padding:100px 10%;
 }
 
 .title{
-font-size:40px;
-color:#FFD700;
-margin-bottom:25px;
 text-align:center;
+font-size:42px;
+color:#FFD700;
+margin-bottom:50px;
+}.about-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
 .card{
-background:#181818;
-padding:25px;
+background:#111;
+padding:30px;
+border-radius:20px;
+transition:.4s;
+border:1px solid rgba(255,215,0,.15);
+box-shadow:0 0 25px rgba(255,215,0,.08);
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 35px rgba(255,215,0,.35);
+}
+
+.card h3{
+color:#FFD700;
+margin-bottom:15px;
+font-size:26px;
+}
+
+.card p{
+line-height:1.8;
+color:#ddd;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.stat{
+background:#111;
+padding:35px;
+text-align:center;
 border-radius:18px;
-margin-top:20px;
-box-shadow:0 0 20px rgba(255,215,0,.1);
+}
+
+.stat h2{
+font-size:50px;
+color:#FFD700;
+}
+
+.stat p{
+margin-top:10px;
+font-size:18px;
+}
+
+.contact{
+text-align:center;
+}
+
+.contact a{
+display:inline-block;
+margin:12px;
+padding:15px 30px;
+background:#FFD700;
+color:black;
+text-decoration:none;
+border-radius:40px;
+font-weight:bold;
+transition:.3s;
+}
+
+.contact a:hover{
+transform:scale(1.08);
 }
 
 footer{
 background:#111;
 text-align:center;
-padding:25px;
+padding:35px;
 margin-top:60px;
-color:#bbb;
+color:#aaa;
+font-size:18px;
 }
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+}
+
+nav{
+margin-top:15px;
+}
+
+nav a{
+display:inline-block;
+margin:8px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+}
+
 </style>
 
 </head>
+
 <body>
 
 <header>
 
-<div class="logo">❤️ Prince Foundation</div>
+<div class="logo">
+❤️ Prince Foundation
+</div>
 
 <nav>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Mission</a>
-<a href="#">Volunteer</a>
-<a href="#">Contact</a>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#mission">Mission</a>
+<a href="#impact">Impact</a>
+<a href="#contact">Contact</a>
 </nav>
 
 </header>
 
-<section class="hero">
+<section class="hero" id="home">
 
 <h1>Helping People,<br>Changing Lives.</h1>
 
 <p>
-Together we can bring hope, kindness and support to people who need it the most.
+Together we bring hope, education and support to people who need it most.
 </p>
 
-<button>Join Our Mission</button>
+<a href="#about" class="btn">Join Our Mission</a>
+
+</section><section id="about">
+
+<h2 class="title">About Us</h2>
+
+<div class="about-grid">
+
+<div class="card">
+<h3>Who We Are</h3>
+<p>
+Prince Foundation is a non-profit initiative dedicated to helping people through kindness, compassion and community service.
+</p>
+</div>
+
+<div class="card">
+<h3>Our Vision</h3>
+<p>
+To build a future where everyone has access to education, healthcare and opportunities for a better life.
+</p>
+</div>
+
+<div class="card">
+<h3>Our Values</h3>
+<p>
+Compassion, Honesty, Respect, Unity and Service are the core values that guide everything we do.
+</p>
+</div>
+
+</div>
 
 </section>
 
-<section>
+<section id="mission">
 
-<h2 class="title">Welcome</h2>
+<h2 class="title">Our Mission</h2>
+
+<div class="about-grid">
 
 <div class="card">
+<h3>🍛 Food Support</h3>
+<p>Providing meals to families in need.</p>
+</div>
 
-<h3>Small Help. Big Change.</h3>
+<div class="card">
+<h3>📚 Education</h3>
+<p>Supporting children's education and learning.</p>
+</div>
 
-<br>
+<div class="card">
+<h3>❤️ Healthcare</h3>
+<p>Helping people access healthcare and medicines.</p>
+</div>
 
-<p>
+<div class="card">
+<h3>🤝 Community</h3>
+<p>Building a stronger and happier community together.</p>
+</div>
 
-Prince Foundation is a community initiative created to help people in need through kindness, compassion and unity.
+</div>
 
-</p>
+</section>
+
+<section id="impact">
+
+<h2 class="title">Our Impact</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h2>1000+</h2>
+<p>Lives Helped</p>
+</div>
+
+<div class="stat">
+<h2>150+</h2>
+<p>Volunteers</p>
+</div>
+
+<div class="stat">
+<h2>50+</h2>
+<p>Campaigns</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Hope & Dedication</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="title">Contact Us</h2>
+
+<div class="contact">
+
+<a href="mailto:princefoundation@gmail.com">📧 Email</a>
+
+<a href="#">📷 Instagram</a>
+
+<a href="#">💬 WhatsApp</a>
 
 </div>
 
@@ -168,6 +357,9 @@ Prince Foundation is a community initiative created to help people in need throu
 <footer>
 
 © 2026 Prince Foundation ❤️
+<br><br>
+
+Helping People • Changing Lives
 
 </footer>
 
